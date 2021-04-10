@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+
+    <TextView
+        android:id="@+id/preferenceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="645dp"
+        android:text="Preferences"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="38dp"
+        android:background="#c0c0c0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preferenceTitle" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="528dp"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="557dp"
+        android:text="Are You Vaccinated?"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="470dp"
+        android:text="Select Your Preferred Sports"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="124dp"
+        android:layout_height="345dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="98dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <RadioButton
+            android:id="@+id/radioButtonBasketball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basketball" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBaseball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Baseball" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFootball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Football" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGolf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Golf" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHockey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hockey" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSoccer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soccer" />
+
+        <RadioButton
+            android:id="@+id/radioButtonVolleyball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volleyball" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="126dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="16dp"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
