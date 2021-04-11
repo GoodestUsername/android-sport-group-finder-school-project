@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
             finish();
         }
 
-        register_btn = findViewById(R.id.btn_reg_login);
+        register_btn = findViewById(R.id.register_btn);
         register_btn.setOnClickListener(view -> {
             String first_name = RegisterActivity.this.first_name.getText().toString().trim();
             String last_name = RegisterActivity.this.last_name.getText().toString().trim();
@@ -120,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                     singleTon.setUserUID(uid);
 
                     DatabaseReference usersReference = mDatabase.child("Users");
-                    usersReference.setValue(singleTon.getUserUID());
+                    usersReference.push().setValue(singleTon.getUserUID());
                     DatabaseReference profile = usersReference.child(singleTon.getUserUID());
                     profile.setValue(singleTon);
 

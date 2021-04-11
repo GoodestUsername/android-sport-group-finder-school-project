@@ -1,151 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
-
+    tools:context=".SignUpActivity"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/preferenceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="645dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
         android:text="@string/preferences_title"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="25sp" />
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginTop="38dp"
-        android:background="#c0c0c0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preferenceTitle" />
+        android:layout_weight="0.1"
+        android:background="#c0c0c0" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/isVaccinatedCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:text="@string/vax_question"
+        android:layout_weight="0.3"
+        android:textSize="17sp" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="528dp"
-        android:background="#c0c0c0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        android:layout_weight="0.1"
+        android:background="#c0c0c0" />
 
-    <RadioButton
-        android:id="@+id/isVaccinatedRadioBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="557dp"
-        android:text="@string/vax_question"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
         android:id="@+id/preferredSportTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
+        android:layout_gravity="center"
         android:layout_marginTop="27dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="470dp"
         android:text="@string/sports_pref"
-        android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        android:layout_weight="0.8"
+        android:textSize="23sp" />
 
-    <RadioGroup
-        android:id="@+id/preferedSportRadioGroup"
-        android:layout_width="124dp"
-        android:layout_height="345dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="98dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preferredSportTitle">
+    <ScrollView
+        android:id="@+id/scrollview_choices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:fillViewport="false">
+        <RadioGroup
+            android:id="@+id/preferredSportRadioGroup"
+            android:layout_gravity="center"
+            android:layout_width="124dp"
+            android:layout_height="345dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="30dp">
+            <RadioButton
+                android:id="@+id/radioButtonBasketball"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/b_ball" />
 
-        <RadioButton
-            android:id="@+id/radioButtonBasketball"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/b_ball" />
+            <RadioButton
+                android:id="@+id/radioButtonBaseball"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/baseball_title" />
 
-        <RadioButton
-            android:id="@+id/radioButtonBaseball"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/baseball_title" />
+            <RadioButton
+                android:id="@+id/radioButtonFootball"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/football_title" />
 
-        <RadioButton
-            android:id="@+id/radioButtonFootball"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/football_title" />
+            <RadioButton
+                android:id="@+id/radioButtonGolf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/golf_title" />
 
-        <RadioButton
-            android:id="@+id/radioButtonGolf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/golf_title" />
+            <RadioButton
+                android:id="@+id/radioButtonHockey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/hockey_title" />
 
-        <RadioButton
-            android:id="@+id/radioButtonHockey"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hockey_title" />
+            <RadioButton
+                android:id="@+id/radioButtonSoccer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/soccer_title" />
 
-        <RadioButton
-            android:id="@+id/radioButtonSoccer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/soccer_title" />
-
-        <RadioButton
-            android:id="@+id/radioButtonVolleyball"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/volleyball_title" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/radioButtonVolleyball"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="19sp"
+                android:text="@string/volleyball_title" />
+        </RadioGroup>
+    </ScrollView>
 
     <Button
         android:id="@+id/next_btn"
         android:layout_width="126dp"
         android:layout_height="61dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
         android:text="@string/next"
-        android:backgroundTint="#6699ff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preferedSportRadioGroup" />
+        android:layout_weight="0.3"
+        android:backgroundTint="#6699ff" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -2,9 +2,9 @@ package com.example.termproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUpActivity extends AppCompatActivity {
 
     Button next_part;
-    RadioButton isVaccinated;
+    CheckBox isVaccinated;
     RadioGroup preferredSportGroup;
     RegistrationInformationSingleTon informationSingleTon = RegistrationInformationSingleTon.getInstance();
 
@@ -55,8 +55,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        isVaccinated = findViewById(R.id.isVaccinatedRadioBtn);
-        preferredSportGroup = findViewById(R.id.preferedSportRadioGroup);
+        isVaccinated = findViewById(R.id.isVaccinatedCheckBox);
+        preferredSportGroup = (RadioGroup) findViewById(R.id.preferredSportRadioGroup);
 
         next_part = findViewById(R.id.next_btn);
 
@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
             informationSingleTon.setVaccinated(isVaccinated.isChecked());
 
-            new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
         });
     }
 }
