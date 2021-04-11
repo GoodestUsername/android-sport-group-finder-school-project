@@ -94,6 +94,4 @@
         android:backgroundTint="#6699ff"
         android:layout_gravity="center"
         android:text="@string/save_btn_title" />
-
-
 </LinearLayout>

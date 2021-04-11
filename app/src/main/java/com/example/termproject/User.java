@@ -10,13 +10,34 @@ public class User {
     private String email;
     private String preferredSport;
     private ArrayList<String> joinedGroups;
+    private ArrayList<String> createdGroups;
     private Boolean isVaccinated;
 
     public void removeJoinedGroup(String groupID) {
-        this.joinedGroups.remove(groupID);
+        this.createdGroups.remove(groupID);
     }
 
     public Boolean addToGroup(String groupID) {
+        if (this.createdGroups.contains(groupID)) {
+            return false;
+        }
+
+        this.createdGroups.add(groupID);
+        return true;
+    }
+
+    public ArrayList<String> getCreatedGroups() {
+        return createdGroups;
+    }
+
+    public void setCreatedGroups(ArrayList<String> joinedGroups) {
+        this.createdGroups = joinedGroups;
+    }
+    public void removeCreatedGroups(String groupID) {
+        this.joinedGroups.remove(groupID);
+    }
+
+    public Boolean addToCreatedGroups(String groupID) {
         if (this.joinedGroups.contains(groupID)) {
             return false;
         }

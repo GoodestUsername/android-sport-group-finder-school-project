@@ -24,28 +24,41 @@ public class SignUpActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.radioButtonBaseball:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.baseball_title));
+                if (checked){
+                    informationSingleTon.setPreferredSport(getString(R.string.baseball_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
                 break;
             case R.id.radioButtonFootball:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.football_title));
+                if (checked) {
+                    informationSingleTon.setPreferredSport(getString(R.string.football_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
                 break;
             case R.id.radioButtonGolf:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.golf_title));
+                if (checked) {
+                    informationSingleTon.setPreferredSport(getString(R.string.golf_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
                 break;
             case R.id.radioButtonHockey:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.hockey_title));
+                if (checked) {
+                    informationSingleTon.setPreferredSport(getString(R.string.hockey_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
                 break;
             case R.id.radioButtonSoccer:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.soccer_title));
+                if (checked) {
+                    informationSingleTon.setPreferredSport(getString(R.string.soccer_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
+
                 break;
             case R.id.radioButtonVolleyball:
-                if (checked)
-                    informationSingleTon.setPreferredSport(String.valueOf(R.string.volleyball_title));
+                if (checked) {
+                    informationSingleTon.setPreferredSport(getString(R.string.volleyball_title));
+                    System.out.println(informationSingleTon.getPreferredSport() + "asdadasdas");
+                }
                 break;
         }
     }

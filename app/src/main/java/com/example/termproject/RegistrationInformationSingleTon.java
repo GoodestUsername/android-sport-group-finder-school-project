@@ -6,22 +6,30 @@ public class RegistrationInformationSingleTon {
     private static RegistrationInformationSingleTon instance = null;
 
     // variable of type String
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String userUID;
-    private String email;
-    private String preferredSport;
-    private Boolean isVaccinated;
-    private final ArrayList<String> joinedGroups = null;
+    private static String username;
+    private static String firstName;
+    private static String lastName;
+    private static String userUID;
+    private static String email;
+    private static String preferredSport;
+    private static Boolean isVaccinated;
+    private static String hostID;
+    private static ArrayList<String> joinedGroups = null;
 
+    public static String getHostID() {
+        return hostID;
+    }
+
+    public static void setHostID(String hostID) {
+        RegistrationInformationSingleTon.hostID = hostID;
+    }
 
     public String getPreferredSport() {
         return preferredSport;
     }
 
     public void setPreferredSport(String preferredSport) {
-        this.preferredSport = preferredSport;
+        RegistrationInformationSingleTon.preferredSport = preferredSport;
     }
 
     public Boolean getVaccinated() {
@@ -37,7 +45,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        RegistrationInformationSingleTon.username = username;
     }
 
     public String getFirstName() {
@@ -45,7 +53,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        RegistrationInformationSingleTon.firstName = firstName;
     }
 
     public String getLastName() {
@@ -53,7 +61,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        RegistrationInformationSingleTon.lastName = lastName;
     }
 
     public String getUserUID() {
@@ -61,7 +69,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setUserUID(String userUID) {
-        this.userUID = userUID;
+        RegistrationInformationSingleTon.userUID = userUID;
     }
 
     public String getEmail() {
@@ -69,17 +77,17 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        RegistrationInformationSingleTon.email = email;
     }
 
     private RegistrationInformationSingleTon() {
-        this.username = null;
-        this.firstName = null;
-        this.lastName = null;
-        this.userUID = null;
-        this.email = null;
-        this.preferredSport = null;
-        this.isVaccinated = null;
+        username = null;
+        firstName = null;
+        lastName = null;
+        userUID = null;
+        email = null;
+        preferredSport = null;
+        isVaccinated = null;
     }
 
     public static RegistrationInformationSingleTon getInstance()
