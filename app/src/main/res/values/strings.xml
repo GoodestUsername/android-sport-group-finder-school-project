@@ -60,7 +60,9 @@
     <string name="next">next</string>
 
 
-    <string name="pref_title">Add or Remove Preferences</string>
+    <string name="pref_title">Change Preference</string>
     <string name="save_btn_title">Save</string>
+    <string name="groups">Groups</string>
+    <string name="your_groups">Your Groups</string>
 
 </resources>

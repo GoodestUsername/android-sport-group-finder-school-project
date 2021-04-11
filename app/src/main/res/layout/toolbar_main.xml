@@ -6,4 +6,5 @@
     android:id="@+id/toolbar"
     android:layout_alignParentTop="true"
     android:background="?attr/colorPrimary"
+    android:backgroundTint="#6699ff"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />

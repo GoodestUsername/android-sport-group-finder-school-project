@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="bottom|start"
-        android:layout_margin="16dp" >
+        android:layout_margin="20dp"
+        >
 
     </LinearLayout>
 </FrameLayout>
