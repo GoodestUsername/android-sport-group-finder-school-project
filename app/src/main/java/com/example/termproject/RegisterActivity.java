@@ -4,6 +4,7 @@ package com.example.termproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
@@ -41,6 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
         user_name = findViewById(R.id.username_edit);
         user_email = findViewById(R.id.email_edit);
         user_password = findViewById(R.id.password_edit);
+
+        first_name.setHintTextColor(Color.WHITE);
+        last_name.setHintTextColor(Color.WHITE);
+        user_name.setHintTextColor(Color.WHITE);
+        user_email.setHintTextColor(Color.WHITE);
+        user_password.setHintTextColor(Color.WHITE);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         fAuth = FirebaseAuth.getInstance();

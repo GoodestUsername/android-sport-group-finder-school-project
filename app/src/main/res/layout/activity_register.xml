@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".RegisterActivity">
 
 
@@ -43,6 +44,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:textColor="@color/white"
             android:hint="@string/first_name_hint"
             android:inputType="textPersonName" />
 
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:hint="@string/last_name_hint"
             android:inputType="textPersonName" />
@@ -62,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginStart="68dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="20dp"
@@ -73,6 +77,7 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginStart="68dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="20dp"
@@ -85,6 +90,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="40dp"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pass"
