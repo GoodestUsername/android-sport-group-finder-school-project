@@ -2,7 +2,7 @@
     <string name="app_name">COMP 3717 Term Project</string>
     <string name="std_names">Created By Sirinam and Eric</string>
     <string name="stud_id_1">Eric Dong A001170099</string>
-    <string name="stud_id_2">Sirinam A00992205</string>
+    <string name="stud_id_2">Sirinam Virdee A00992205</string>
 
     <string name="login_title">Login</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -62,5 +62,9 @@
     <string name="soccer_title">Soccer</string>
     <string name="volleyball_title">Volleyball</string>
     <string name="next">next</string>
+
+
+    <string name="pref_title">Add or Remove Preferences</string>
+    <string name="save_btn_title">Save</string>
 
 </resources>
