@@ -33,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         login_btn = findViewById(R.id.login_btn);
         register_btn = findViewById(R.id.btn_reg_login);
 
+        edit_email.setHintTextColor(Color.WHITE);
+        edit_password.setHintTextColor(Color.WHITE);
+
         fAuth = FirebaseAuth.getInstance();
 
         login_btn.setOnClickListener(view -> {
