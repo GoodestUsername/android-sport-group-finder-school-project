@@ -49,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
         user_email.setHintTextColor(Color.WHITE);
         user_password.setHintTextColor(Color.WHITE);
 
+
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
         fAuth = FirebaseAuth.getInstance();
 
