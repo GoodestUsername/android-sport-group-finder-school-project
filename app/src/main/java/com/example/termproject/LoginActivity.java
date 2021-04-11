@@ -41,52 +41,44 @@ public class LoginActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = edit_email.getText().toString().trim();
-                String password = edit_password.getText().toString().trim();
+        login_btn.setOnClickListener(view -> {
+            String email = edit_email.getText().toString().trim();
+            String password = edit_password.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    edit_email.setError("You must have an email");
-                    return;
-                }
+            if (TextUtils.isEmpty(email)) {
+                edit_email.setError("You must have an email");
+                return;
+            }
 
-                if (TextUtils.isEmpty(password)) {
-                    edit_email.setError("You must have a password");
-                    return;
-                }
+            if (TextUtils.isEmpty(password)) {
+                edit_email.setError("You must have a password");
+                return;
+            }
 
-                if (password.length() <6) {
-                    edit_email.setError("Password must 6+ characters");
-                    return;
-                }
+            if (password.length() <6) {
+                edit_email.setError("Password must 6+ characters");
+                return;
+            }
 
-                progress_bar.setVisibility(View.VISIBLE);
+            progress_bar.setVisibility(View.VISIBLE);
 
 
-                //This is how the user is authenticated
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Login was successful", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            progress_bar.setVisibility(View.GONE);
-                        }
+            //This is how the user is authenticated
+            fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LoginActivity.this, "Login was successful", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        progress_bar.setVisibility(View.GONE);
                     }
-                });
+                }
+            });
 
-            }
         });
 
-        register_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-            }
-        });
+        register_btn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RegisterActivity.class)));
     }
 }

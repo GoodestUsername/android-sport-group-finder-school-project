@@ -1,37 +1,16 @@
 package com.example.termproject;
 
-import java.util.ArrayList;
+public class RegistrationInformationSingleTon {
+    private static RegistrationInformationSingleTon instance = null;
 
-public class User {
+    // variable of type String
     private String username;
     private String firstName;
     private String lastName;
     private String userUID;
     private String email;
     private String preferredSport;
-    private ArrayList<String> joinedGroups;
     private Boolean isVaccinated;
-
-    public void removeJoinedGroup(String groupID) {
-        this.joinedGroups.remove(groupID);
-    }
-
-    public Boolean addToGroup(String groupID) {
-        if (this.joinedGroups.contains(groupID)) {
-            return false;
-        }
-
-        this.joinedGroups.add(groupID);
-        return true;
-    }
-
-    public ArrayList<String> getJoinedGroups() {
-        return joinedGroups;
-    }
-
-    public void setJoinedGroups(ArrayList<String> joinedGroups) {
-        this.joinedGroups = joinedGroups;
-    }
 
     public String getPreferredSport() {
         return preferredSport;
@@ -89,16 +68,12 @@ public class User {
         this.email = email;
     }
 
-    public User() {}
+    private RegistrationInformationSingleTon() { }
 
-    public User(String username, String firstName, String lastName,
-                String userUID, String email, Boolean isVaccinated, String preferredSport) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userUID = userUID;
-        this.email = email;
-        this.preferredSport = preferredSport;
-        this.isVaccinated = isVaccinated;
+    public static RegistrationInformationSingleTon getInstance()
+    {
+        if (instance == null) instance = new RegistrationInformationSingleTon();
+
+        return instance;
     }
 }
