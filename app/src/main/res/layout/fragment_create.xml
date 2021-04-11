@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".CreateFragment"
     >
 
@@ -18,13 +19,14 @@
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:text="@string/create_event_title"
+        android:textColor="#6699ff"
         android:textSize="25sp" />
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_gravity="center"
-        android:background="#c0c0c0" />
+        android:background="#6699ff" />
 
     <EditText
         android:id="@+id/sport_edit"
@@ -33,6 +35,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:hint="@string/sport_title"
         android:inputType="text" />
 
@@ -41,6 +44,7 @@
         android:layout_width="301dp"
         android:layout_height="46dp"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         android:hint="@string/location_text"
         android:inputType="text" />
@@ -50,6 +54,7 @@
         android:layout_width="301dp"
         android:layout_height="46dp"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         android:hint="@string/date_text"
         android:inputType="datetime" />
@@ -58,6 +63,7 @@
         android:id="@+id/game_size_edit"
         android:layout_width="301dp"
         android:layout_height="46dp"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:hint="@string/size_text"
         android:inputType="number" />

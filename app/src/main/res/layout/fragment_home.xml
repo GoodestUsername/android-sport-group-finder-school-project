@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".HomeFragment"
     >
 
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/groups"
+        android:textColor="#6699ff"
         android:layout_marginTop="20dp"
         android:textSize="25sp" />
 
@@ -25,6 +27,6 @@
         android:layout_height="3dp"
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
-        android:background="#c0c0c0" />
+        android:background="#6699ff" />
 
 </LinearLayout>
