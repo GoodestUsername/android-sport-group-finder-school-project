@@ -42,17 +42,13 @@
 
     <string name="preferences_title">Preferences</string>
     <string name="vax_question">Are You Vaccinated?</string>
-    <string name="sports_pref">Select Your Preferred Sports</string>
+    <string name="sports_pref">Select Your Preferred Sport</string>
 
     <string name="sport_title">Sport</string>
     <string name="create_event_title">Create Event</string>
     <string name="location_text">Location</string>
     <string name="date_text">Date</string>
     <string name="size_text">Size</string>
-
-
-
-
 
     <string name="b_ball">Basketball</string>
     <string name="baseball_title">Baseball</string>

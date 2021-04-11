@@ -1,5 +1,7 @@
 package com.example.termproject;
 
+import java.util.ArrayList;
+
 public class RegistrationInformationSingleTon {
     private static RegistrationInformationSingleTon instance = null;
 
@@ -11,6 +13,8 @@ public class RegistrationInformationSingleTon {
     private String email;
     private String preferredSport;
     private Boolean isVaccinated;
+    private final ArrayList<String> joinedGroups = null;
+
 
     public String getPreferredSport() {
         return preferredSport;
@@ -68,7 +72,15 @@ public class RegistrationInformationSingleTon {
         this.email = email;
     }
 
-    private RegistrationInformationSingleTon() { }
+    private RegistrationInformationSingleTon() {
+        this.username = null;
+        this.firstName = null;
+        this.lastName = null;
+        this.userUID = null;
+        this.email = null;
+        this.preferredSport = null;
+        this.isVaccinated = null;
+    }
 
     public static RegistrationInformationSingleTon getInstance()
     {
