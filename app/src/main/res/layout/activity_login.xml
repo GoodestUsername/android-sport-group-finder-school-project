@@ -5,6 +5,7 @@
     android:id="@+id/linearLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
@@ -13,6 +14,7 @@
         android:layout_marginBottom="10dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/stud_id_1" />
@@ -20,6 +22,7 @@
     <TextView
         android:id="@+id/sirinamInfoTextBox"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginEnd="68dp"
+        
         android:layout_marginBottom="10dp"
         android:layout_gravity="center"
         android:hint="@string/email"

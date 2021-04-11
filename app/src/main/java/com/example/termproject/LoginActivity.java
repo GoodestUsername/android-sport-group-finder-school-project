@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -40,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         register_btn = findViewById(R.id.btn_reg_login);
 
         fAuth = FirebaseAuth.getInstance();
+
+        edit_email.setHintTextColor(Color.WHITE);
 
         login_btn.setOnClickListener(view -> {
             String email = edit_email.getText().toString().trim();
