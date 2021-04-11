@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".SettingsFragment"
     >
 
@@ -17,6 +18,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/settings_title"
+        android:textColor="#6699ff"
         android:textSize="25sp" />
 
     <View
@@ -24,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="2dp"
         android:layout_gravity="center"
-        android:background="#c0c0c0" />
+        android:background="#6699ff" />
 
     <TextView
         android:id="@+id/changeSettingsTitle"
@@ -34,6 +36,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/pref_title"
+        android:textColor="#6699ff"
         android:textSize="23sp" />
 
     <RadioGroup
@@ -48,41 +51,48 @@
             android:id="@+id/radioButtonBasketball"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="@string/b_ball" />
 
         <RadioButton
             android:id="@+id/radioButtonBaseball"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/baseball_title" />
 
         <RadioButton
             android:id="@+id/radioButtonFootball"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/football_title" />
 
         <RadioButton
             android:id="@+id/radioButtonGolf"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/golf_title" />
 
         <RadioButton
             android:id="@+id/radioButtonHockey"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/hockey_title" />
 
         <RadioButton
             android:id="@+id/radioButtonSoccer"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/soccer_title" />
 
         <RadioButton
             android:id="@+id/radioButtonVolleyball"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/volleyball_title" />
     </RadioGroup>
