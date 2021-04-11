@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CreateFragment"
     >
+
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/create_title"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        />
-</LinearLayout>
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="627dp"
+        android:textSize="25sp"
+        android:text="@string/create_event_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sport_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="535dp"
+        android:hint="@string/sport_title"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/location_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="488dp"
+        android:hint="@string/location_text"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sport_edit" />
+
+    <EditText
+        android:id="@+id/date_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="442dp"
+        android:hint="@string/date_text"
+        android:inputType="datetime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_edit" />
+
+    <EditText
+        android:id="@+id/game_size_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="395dp"
+        android:hint="@string/size_text"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_edit" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="163dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="280dp"
+        android:text="@string/create_event_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_size_edit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
