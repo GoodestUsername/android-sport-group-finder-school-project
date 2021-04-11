@@ -15,7 +15,7 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="645dp"
-        android:text="Preferences"
+        android:text="@string/preferences_title"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="126dp"
         android:layout_marginBottom="557dp"
-        android:text="Are You Vaccinated?"
+        android:text="@string/vax_question"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="172dp"
         android:layout_marginBottom="470dp"
-        android:text="Select Your Preferred Sports"
+        android:text="@string/sports_pref"
         android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,43 +94,43 @@
             android:id="@+id/radioButtonBasketball"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Basketball" />
+            android:text="@string/b_ball" />
 
         <RadioButton
             android:id="@+id/radioButtonBaseball"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Baseball" />
+            android:text="@string/baseball_title" />
 
         <RadioButton
             android:id="@+id/radioButtonFootball"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Football" />
+            android:text="@string/football_title" />
 
         <RadioButton
             android:id="@+id/radioButtonGolf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Golf" />
+            android:text="@string/golf_title" />
 
         <RadioButton
             android:id="@+id/radioButtonHockey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hockey" />
+            android:text="@string/hockey_title" />
 
         <RadioButton
             android:id="@+id/radioButtonSoccer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Soccer" />
+            android:text="@string/soccer_title" />
 
         <RadioButton
             android:id="@+id/radioButtonVolleyball"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Volleyball" />
+            android:text="@string/volleyball_title" />
     </RadioGroup>
 
     <Button
@@ -141,7 +141,7 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="16dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

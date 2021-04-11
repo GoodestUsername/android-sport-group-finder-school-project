@@ -21,4 +21,24 @@
 
     <string name="nav_open_drawer">Open Navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
+
+    <string name="create_title">Create</string>
+    <string name="groups_title">Groups</string>
+    <string name="home_title">Home</string>
+    <string name="settings_title">Settings</string>
+    <string name="sign_out_title">Sign Out</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="preferences_title">Preferences</string>
+    <string name="vax_question">Are You Vaccinated?</string>
+    <string name="sports_pref">Select Your Preferred Sports</string>
+
+    <string name="b_ball">Basketball</string>
+    <string name="baseball_title">Baseball</string>
+    <string name="football_title">Football</string>
+    <string name="golf_title">Golf</string>
+    <string name="hockey_title">Hockey</string>
+    <string name="soccer_title">Soccer</string>
+    <string name="volleyball_title">Volleyball</string>
+
 </resources>

@@ -3,35 +3,35 @@
     <group android:checkableBehavior="single" >
         <item
             android:id="@+id/nav_home"
-            android:icon="@android:drawable/sym_action_email"
-            android:title="Home"
+
+            android:title="@string/home_title"
             android:checked="true" />
         <item
             android:id="@+id/nav_create"
-            android:icon="@android:drawable/ic_menu_edit"
-            android:title="Create" />
+
+            android:title="@string/create_title" />
         <item
             android:id="@+id/nav_groups"
-            android:icon="@android:drawable/ic_menu_send"
-            android:title="Groups" />
+
+            android:title="@string/groups_title" />
     </group>
 
-    <item android:title="Settings" >
+    <item android:title="@string/settings_title" >
         <menu>
             <item
                 android:id="@+id/nav_settings"
-                android:icon="@android:drawable/ic_menu_help"
-                android:title="Settings" />
+
+                android:title="@string/settings_title" />
 
         </menu>
     </item>
 
-    <item android:title="Sign Out" >
+    <item android:title="@string/sign_out_title" >
         <menu>
             <item
                 android:id="@+id/nav_sign_out"
-                android:icon="@android:drawable/ic_menu_help"
-                android:title="Sign Out" />
+
+                android:title="@string/sign_out_title" />
 
         </menu>
     </item>
