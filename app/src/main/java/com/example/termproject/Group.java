@@ -11,10 +11,18 @@ public class Group {
     String createdDate;
     String lastUpdatedDate;
     String eventDate;
+    String hostID;
     int numberOfPeople;
     String sport;
     ArrayList<String> participantIDs;
 
+    public String getHostID() {
+        return hostID;
+    }
+
+    public void setHostID(String hostID) {
+        this.hostID = hostID;
+    }
     public String getGroupID() {
         return groupID;
     }
@@ -90,12 +98,13 @@ public class Group {
     public Group() {}
 
     public Group(String groupID, String sport, String location, String createdDate,
-                 int numberOfPeople, ArrayList<String> participantIDs) {
+                 int numberOfPeople, ArrayList<String> participantIDs, String hostID) {
         this.groupID = groupID;
         this.sport = sport;
         this.location = location;
         this.createdDate = createdDate;
         this.numberOfPeople = numberOfPeople;
         this.participantIDs = participantIDs;
+        this.hostID = hostID;
     }
 }

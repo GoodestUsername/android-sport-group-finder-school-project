@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
-        edit_email.setHintTextColor(Color.WHITE);
-
         login_btn.setOnClickListener(view -> {
             String email = edit_email.getText().toString().trim();
             String password = edit_password.getText().toString().trim();
