@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 public class Group {
     String groupID;
-    String sport;
     String location;
     String createdDate;
     String lastUpdatedDate;
     String eventDate;
     int numberOfPeople;
+    String sport;
     ArrayList<String> participantIDs;
 
     public String getGroupID() {
