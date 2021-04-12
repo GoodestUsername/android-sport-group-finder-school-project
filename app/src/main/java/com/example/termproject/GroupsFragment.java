@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +49,7 @@ public class GroupsFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
 
         String uid = user.getUid();
         Query joinedGroupsQuery = mDatabase.child("Users").child(uid).child("joinedGroups");
@@ -60,7 +63,7 @@ public class GroupsFragment extends Fragment {
                 }
 
                 Query groupsQuery = mDatabase.child("Groups");
-                groupsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                groupsQuery.limitToFirst(30).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         groupList.clear();
@@ -70,20 +73,53 @@ public class GroupsFragment extends Fragment {
                                 groupList.add(currentGroup);
                             }
                         }
-                        GroupListAdapter adapter = new GroupListAdapter(getActivity(),
-                                groupList);
-                        joinedGroupsLV.setAdapter(adapter);
-                        v.findViewById(R.id.loadingPanelMyGroup).setVisibility(View.GONE);
+                        Query userPreferenceQuery = mDatabase.child("Users").child(uid).
+                                child("preferredSport");
+
+                        userPreferenceQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String sport = (String) snapshot.getValue();
+                                ArrayList<Group> priority = new ArrayList<>();
+                                ArrayList<Group> nonPriority = new ArrayList<>();
+                                for (Group group : groupList) {
+                                    if (group.getSport().toLowerCase().equals(sport.toLowerCase())){
+                                        priority.add(group);
+                                    }
+                                    else {
+                                        nonPriority.add(group);
+                                    }
+                                }
+
+                                ArrayList<Group> sortedGroup = new ArrayList<>();
+                                sortedGroup.addAll(priority);
+                                sortedGroup.addAll(nonPriority);
+                                groupList = sortedGroup;
+
+                                if (getActivity()!=null) {
+                                    GroupListAdapter adapter = new GroupListAdapter(getActivity(),
+                                            groupList);
+                                    joinedGroupsLV.setAdapter(adapter);
+                                    v.findViewById(R.id.loadingPanelMyGroup).setVisibility(View.GONE);
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

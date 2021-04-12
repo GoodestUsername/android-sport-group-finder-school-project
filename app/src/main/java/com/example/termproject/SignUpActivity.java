@@ -16,7 +16,7 @@ public class SignUpActivity extends AppCompatActivity {
     Button next_part;
     CheckBox isVaccinated;
     RadioGroup preferredSportGroup;
-    RegistrationInformationSingleTon informationSingleTon = RegistrationInformationSingleTon.getInstance();
+    UserInformationSingleTon informationSingleTon = UserInformationSingleTon.getInstance();
 
     // source: https://developer.android.com/guide/topics/ui/controls/radiobutton
     public void onRadioButtonClicked(View view) {

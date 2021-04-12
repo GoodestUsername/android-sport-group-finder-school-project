@@ -46,12 +46,12 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if (TextUtils.isEmpty(password)) {
-                edit_email.setError("You must have a password");
+                edit_password.setError("You must have a password");
                 return;
             }
 
             if (password.length() <6) {
-                edit_email.setError("Password must 6+ characters");
+                edit_password.setError("Password must 6+ characters");
                 return;
             }
 

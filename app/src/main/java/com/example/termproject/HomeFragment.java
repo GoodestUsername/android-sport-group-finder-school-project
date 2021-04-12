@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,7 +59,7 @@ public class HomeFragment extends Fragment {
                 }
 
                 Query groupsQuery = mDatabase.child("Groups");
-                groupsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                groupsQuery.limitToFirst(30).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         groupList.clear();
@@ -68,24 +69,52 @@ public class HomeFragment extends Fragment {
                                 groupList.add(currentGroup);
                             }
                         }
+                        Query userPreferenceQuery = mDatabase.child("Users").child(uid).
+                                child("preferredSport");
 
-                        if (getActivity()!=null){
-                            GroupListAdapter adapter = new GroupListAdapter(getActivity(),
-                                    groupList);
-                            groupsLV.setAdapter(adapter);
-                            v.findViewById(R.id.loadingPanelHome).setVisibility(View.GONE);
-                        }
+                        userPreferenceQuery.addListenerForSingleValueEvent(new ValueEventListener() {
 
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String sport = (String) snapshot.getValue();
+                                ArrayList<Group> priority = new ArrayList<>();
+                                ArrayList<Group> nonPriority = new ArrayList<>();
+                                for (Group group : groupList) {
+                                    if (group.getSport().toLowerCase().equals(sport.toLowerCase())){
+                                        priority.add(group);
+                                    }
+                                    else {
+                                        nonPriority.add(group);
+                                    }
+                                }
+
+                                ArrayList<Group> sortedGroup = new ArrayList<>();
+                                sortedGroup.addAll(priority);
+                                sortedGroup.addAll(nonPriority);
+                                groupList = sortedGroup;
+                                if (getActivity()!=null) {
+                                    GroupListAdapter adapter = new GroupListAdapter(getActivity(),
+                                            groupList);
+                                    groupsLV.setAdapter(adapter);
+                                    v.findViewById(R.id.loadingPanelHome).setVisibility(View.GONE);
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

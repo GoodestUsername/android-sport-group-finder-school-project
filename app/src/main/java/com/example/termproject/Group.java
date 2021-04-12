@@ -6,6 +6,9 @@ package com.example.termproject;
 import java.util.ArrayList;
 
 public class Group {
+    /**
+     * Class that represents a group.
+     */
     String groupID;
     String location;
     String createdDate;

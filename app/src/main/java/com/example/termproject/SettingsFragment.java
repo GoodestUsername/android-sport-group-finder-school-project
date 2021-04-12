@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ public class SettingsFragment extends Fragment {
     View myView;
     RadioGroup preferredSportGroup;
     Button save;
-    RegistrationInformationSingleTon informationSingleTon = RegistrationInformationSingleTon.getInstance();
+    UserInformationSingleTon informationSingleTon = UserInformationSingleTon.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

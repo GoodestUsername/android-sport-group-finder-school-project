@@ -2,8 +2,8 @@ package com.example.termproject;
 
 import java.util.ArrayList;
 
-public class RegistrationInformationSingleTon {
-    private static RegistrationInformationSingleTon instance = null;
+public class UserInformationSingleTon {
+    private static UserInformationSingleTon instance = null;
 
     // variable of type String
     private static String username;
@@ -21,7 +21,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public static void setJoinedGroups(ArrayList<String> joinedGroups) {
-        RegistrationInformationSingleTon.joinedGroups = joinedGroups;
+        UserInformationSingleTon.joinedGroups = joinedGroups;
     }
 
     public static String getHostID() {
@@ -29,7 +29,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public static void setHostID(String hostID) {
-        RegistrationInformationSingleTon.hostID = hostID;
+        UserInformationSingleTon.hostID = hostID;
     }
 
     public String getPreferredSport() {
@@ -37,7 +37,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setPreferredSport(String preferredSport) {
-        RegistrationInformationSingleTon.preferredSport = preferredSport;
+        UserInformationSingleTon.preferredSport = preferredSport;
     }
 
     public Boolean getVaccinated() {
@@ -53,7 +53,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setUsername(String username) {
-        RegistrationInformationSingleTon.username = username;
+        UserInformationSingleTon.username = username;
     }
 
     public String getFirstName() {
@@ -61,7 +61,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setFirstName(String firstName) {
-        RegistrationInformationSingleTon.firstName = firstName;
+        UserInformationSingleTon.firstName = firstName;
     }
 
     public String getLastName() {
@@ -69,7 +69,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setLastName(String lastName) {
-        RegistrationInformationSingleTon.lastName = lastName;
+        UserInformationSingleTon.lastName = lastName;
     }
 
     public String getUserUID() {
@@ -77,7 +77,7 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setUserUID(String userUID) {
-        RegistrationInformationSingleTon.userUID = userUID;
+        UserInformationSingleTon.userUID = userUID;
     }
 
     public String getEmail() {
@@ -85,10 +85,10 @@ public class RegistrationInformationSingleTon {
     }
 
     public void setEmail(String email) {
-        RegistrationInformationSingleTon.email = email;
+        UserInformationSingleTon.email = email;
     }
 
-    private RegistrationInformationSingleTon() {
+    private UserInformationSingleTon() {
         username = null;
         firstName = null;
         lastName = null;
@@ -98,9 +98,9 @@ public class RegistrationInformationSingleTon {
         isVaccinated = null;
     }
 
-    public static RegistrationInformationSingleTon getInstance()
+    public static UserInformationSingleTon getInstance()
     {
-        if (instance == null) instance = new RegistrationInformationSingleTon();
+        if (instance == null) instance = new UserInformationSingleTon();
 
         return instance;
     }

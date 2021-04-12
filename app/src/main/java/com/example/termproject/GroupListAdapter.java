@@ -40,6 +40,7 @@ public class GroupListAdapter extends ArrayAdapter<Group> {
         TextView desc = listViewItem.findViewById(R.id.descView);
         TextView location = listViewItem.findViewById(R.id.locationView);
         TextView numPeople = listViewItem.findViewById(R.id.numPeopleView);
+        TextView sport = listViewItem.findViewById(R.id.sportView);
 
         Group current_group = groupList.get(position);
 
@@ -47,6 +48,7 @@ public class GroupListAdapter extends ArrayAdapter<Group> {
         desc.setText("About: " + current_group.getDesc());
         location.setText("Location: " + current_group.getLocation());
         numPeople.setText("Number of people: " + current_group.getNumberOfPeople());
+        sport.setText("Sport: " + current_group.getSport());
 
         return listViewItem;
     }
