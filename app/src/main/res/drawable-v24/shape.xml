@@ -2,6 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle" >
 
+    <!--The border for the list views -->
+    <!--https://stackoverflow.com/questions/21253623/border-of-items-of-listview-in-android -->
     <stroke
         android:width="2dp"
         android:color="@color/white" />
