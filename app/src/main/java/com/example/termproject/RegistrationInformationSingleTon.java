@@ -16,6 +16,14 @@ public class RegistrationInformationSingleTon {
     private static String hostID;
     private static ArrayList<String> joinedGroups = null;
 
+    public static ArrayList<String> getJoinedGroups() {
+        return joinedGroups;
+    }
+
+    public static void setJoinedGroups(ArrayList<String> joinedGroups) {
+        RegistrationInformationSingleTon.joinedGroups = joinedGroups;
+    }
+
     public static String getHostID() {
         return hostID;
     }

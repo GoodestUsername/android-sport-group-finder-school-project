@@ -31,7 +31,7 @@
 
     <!-- source https://stackoverflow.com/questions/5442183/using-the-animated-circle-in-an-imageview-while-loading-stuff-->
     <RelativeLayout
-        android:id="@+id/loadingPanelDate"
+        android:id="@+id/loadingPanelHome"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

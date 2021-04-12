@@ -11,7 +11,7 @@
     >
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/myGroupsPageTitleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -30,4 +30,21 @@
         android:layout_height="3dp"
         android:layout_gravity="center"
         android:background="#6699ff" />
+    <!-- source https://stackoverflow.com/questions/5442183/using-the-animated-circle-in-an-imageview-while-loading-stuff-->
+    <RelativeLayout
+        android:id="@+id/loadingPanelMyGroup"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/myGroupsLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

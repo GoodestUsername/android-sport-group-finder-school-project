@@ -115,17 +115,16 @@ public class Group {
 
     public Group() {}
 
-    public Group(String groupID, String sport, String location, String createdDate,
-                 int numberOfPeople, ArrayList<String> participantIDs, String hostID, String title,
-                 String desc) {
-        this.groupID = groupID;
-        this.sport = sport;
-        this.location = location;
+    public Group(String createdDate, String desc, String groupID, String hostID, String location,
+                 int numberOfPeople, ArrayList<String> participantIDs,  String sport, String title) {
         this.createdDate = createdDate;
+        this.desc = desc;
+        this.groupID = groupID;
+        this.hostID = hostID;
+        this.location = location;
         this.numberOfPeople = numberOfPeople;
         this.participantIDs = participantIDs;
-        this.hostID = hostID;
+        this.sport = sport;
         this.title = title;
-        this.desc = desc;
     }
 }

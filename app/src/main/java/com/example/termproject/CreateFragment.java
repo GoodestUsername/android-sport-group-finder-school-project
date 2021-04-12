@@ -29,12 +29,10 @@ import java.util.Date;
 public class CreateFragment extends Fragment {
 
     EditText titleEdit, aboutEdit, sportEdit, locationEdit, gameSizeEdit;
-    EditText title, desc, sport, location, num_people;
-    ProgressBar bar_progress;
     Button create_group;
     FirebaseAuth fAuth;
-    // source: https://firebase.google.com/docs/database/android/read-and-write
 
+    // source: https://firebase.google.com/docs/database/android/read-and-write
     private DatabaseReference mDatabase;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,23 +67,23 @@ public class CreateFragment extends Fragment {
             String num_people =this.gameSizeEdit.getText().toString().trim();
 
             if (TextUtils.isEmpty(title)) {
-                this.title.setError("Requirement: Group title required.");
+                this.titleEdit.setError("Requirement: Group title required.");
                 return;
             }
             if (TextUtils.isEmpty(desc)) {
-                this.title.setError("Requirement: Group description required.");
+                this.aboutEdit.setError("Requirement: Group description required.");
                 return;
             }
             if (TextUtils.isEmpty(sport)) {
-                this.title.setError("Requirement: Sport/ activity required.");
+                this.sportEdit.setError("Requirement: Sport/ activity required.");
                 return;
             }
             if (TextUtils.isEmpty(location)) {
-                this.title.setError("Requirement: location description required");
+                this.locationEdit.setError("Requirement: location description required");
                 return;
             }
             if (TextUtils.isEmpty(num_people)) {
-                this.title.setError("Requirement: estimate of the number of people required.");
+                this.gameSizeEdit.setError("Requirement: estimate of the number of people required.");
                 return;
             }
             // source: https://stackabuse.com/how-to-get-current-date-and-time-in-java/
@@ -97,13 +95,11 @@ public class CreateFragment extends Fragment {
 
             ArrayList<String> IDs = new ArrayList<>();
             IDs.add(uid);
-            Group newGroup = new Group("1", sport, location, formatter.format(date),
-                    1, IDs, uid, title, desc);
-
             String mGroupId = mDatabase.child("Groups").push().getKey();
-            newGroup.setGroupID(mGroupId);
-            mDatabase.child("Groups").child(mGroupId).setValue(newGroup);
+            Group newGroup = new Group(formatter.format(date), desc, mGroupId, uid, location,
+                    Integer.parseInt(num_people), IDs, sport, title);
 
+            mDatabase.child("Groups").child(mGroupId).setValue(newGroup);
             mDatabase.child("Users").child(uid).child("joinedGroups").push().setValue(mGroupId);
 
             ((MainActivity) getActivity()).replaceFragments(new GroupsFragment());
