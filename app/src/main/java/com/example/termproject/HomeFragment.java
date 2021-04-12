@@ -1,10 +1,12 @@
 package com.example.termproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,10 +68,14 @@ public class HomeFragment extends Fragment {
                                 groupList.add(currentGroup);
                             }
                         }
-                        GroupListAdapter adapter = new GroupListAdapter(getActivity(),
-                                groupList);
-                        groupsLV.setAdapter(adapter);
-                        v.findViewById(R.id.loadingPanelHome).setVisibility(View.GONE);
+
+                        if (getActivity()!=null){
+                            GroupListAdapter adapter = new GroupListAdapter(getActivity(),
+                                    groupList);
+                            groupsLV.setAdapter(adapter);
+                            v.findViewById(R.id.loadingPanelHome).setVisibility(View.GONE);
+                        }
+
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
@@ -81,6 +87,33 @@ public class HomeFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });
+
+        groupsLV.setOnItemClickListener((adapterView, v, i, id) -> {
+            Group current = groupList.get(i);
+            String groupID = current.getGroupID();
+            int numPeople = current.getParticipantIDs().size();
+
+            mDatabase.child("Groups").child(groupID).child("participantIDs")
+                    .child(String.valueOf(numPeople)).setValue(uid);
+
+            mDatabase.child("Users").child(uid).child("joinedGroups").push().setValue(groupID);
+
+            // source: https://stackoverflow.com/questions/1397361/how-to-restart-activity-in-android
+            new Handler().post(new Runnable() {
+
+                @Override
+                public void run()
+                {
+                    Intent intent = getActivity().getIntent();
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    getActivity().overridePendingTransition(0, 0);
+                    getActivity().finish();
+
+                    getActivity().overridePendingTransition(0, 0);
+                    startActivity(intent);
+                }
+            });
         });
     }
 }
