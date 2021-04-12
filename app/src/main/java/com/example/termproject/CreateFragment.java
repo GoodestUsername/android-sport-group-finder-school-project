@@ -49,11 +49,6 @@ public class CreateFragment extends Fragment {
         locationEdit = view.findViewById(R.id.location_edit);
         gameSizeEdit = view.findViewById(R.id.game_size_edit);
 
-        titleEdit.setHintTextColor(Color.WHITE);
-        aboutEdit.setHintTextColor(Color.WHITE);
-        sportEdit.setHintTextColor(Color.WHITE);
-        locationEdit.setHintTextColor(Color.WHITE);
-        gameSizeEdit.setHintTextColor(Color.WHITE);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         fAuth = FirebaseAuth.getInstance();

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
     tools:context=".GroupsFragment"
     >
 
@@ -19,7 +18,7 @@
         android:layout_marginBottom="20dp"
         android:text="@string/your_groups"
         android:textSize="25sp"
-        android:textColor="#6699ff"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_gravity="center"
-        android:background="#6699ff" />
+        android:background="@color/orange" />
     <!-- source https://stackoverflow.com/questions/5442183/using-the-animated-circle-in-an-imageview-while-loading-stuff-->
     <RelativeLayout
         android:id="@+id/loadingPanelMyGroup"

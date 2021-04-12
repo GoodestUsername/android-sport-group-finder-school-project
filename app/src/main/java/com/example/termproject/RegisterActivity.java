@@ -43,11 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         user_email = findViewById(R.id.email_edit);
         user_password = findViewById(R.id.password_edit);
 
-        first_name.setHintTextColor(Color.WHITE);
-        last_name.setHintTextColor(Color.WHITE);
-        user_name.setHintTextColor(Color.WHITE);
-        user_email.setHintTextColor(Color.WHITE);
-        user_password.setHintTextColor(Color.WHITE);
+
 
 
 
