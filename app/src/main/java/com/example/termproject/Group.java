@@ -12,9 +12,27 @@ public class Group {
     String lastUpdatedDate;
     String eventDate;
     String hostID;
+    String title;
+    String desc;
     int numberOfPeople;
     String sport;
     ArrayList<String> participantIDs;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public String getHostID() {
         return hostID;
@@ -98,7 +116,8 @@ public class Group {
     public Group() {}
 
     public Group(String groupID, String sport, String location, String createdDate,
-                 int numberOfPeople, ArrayList<String> participantIDs, String hostID) {
+                 int numberOfPeople, ArrayList<String> participantIDs, String hostID, String title,
+                 String desc) {
         this.groupID = groupID;
         this.sport = sport;
         this.location = location;
@@ -106,5 +125,7 @@ public class Group {
         this.numberOfPeople = numberOfPeople;
         this.participantIDs = participantIDs;
         this.hostID = hostID;
+        this.title = title;
+        this.desc = desc;
     }
 }

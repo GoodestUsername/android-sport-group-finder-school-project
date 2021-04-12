@@ -9,35 +9,10 @@ public class User {
     private String userUID;
     private String email;
     private String preferredSport;
-    private ArrayList<String> joinedGroups;
-    private ArrayList<String> createdGroups;
     private Boolean isVaccinated;
+    private ArrayList<String> joinedGroups;
 
-    public void removeJoinedGroup(String groupID) {
-        this.createdGroups.remove(groupID);
-    }
-
-    public Boolean addToGroup(String groupID) {
-        if (this.createdGroups.contains(groupID)) {
-            return false;
-        }
-
-        this.createdGroups.add(groupID);
-        return true;
-    }
-
-    public ArrayList<String> getCreatedGroups() {
-        return createdGroups;
-    }
-
-    public void setCreatedGroups(ArrayList<String> joinedGroups) {
-        this.createdGroups = joinedGroups;
-    }
-    public void removeCreatedGroups(String groupID) {
-        this.joinedGroups.remove(groupID);
-    }
-
-    public Boolean addToCreatedGroups(String groupID) {
+    public Boolean addToJoinedGroups(String groupID) {
         if (this.joinedGroups.contains(groupID)) {
             return false;
         }
@@ -112,8 +87,8 @@ public class User {
 
     public User() {}
 
-    public User(String username, String firstName, String lastName,
-                String userUID, String email, Boolean isVaccinated, String preferredSport) {
+    public User(String username, String firstName, String lastName, String userUID, String email,
+                Boolean isVaccinated, String preferredSport, ArrayList<String> joinedGroups) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -121,5 +96,6 @@ public class User {
         this.email = email;
         this.preferredSport = preferredSport;
         this.isVaccinated = isVaccinated;
+        this.joinedGroups = joinedGroups;
     }
 }

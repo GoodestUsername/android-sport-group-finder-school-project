@@ -27,6 +27,26 @@
         android:layout_height="3dp"
         android:layout_gravity="center"
         android:background="#6699ff" />
+    <EditText
+        android:id="@+id/title_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:hint="@string/group_title"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/about_edit"
+        android:layout_width="301dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:hint="@string/description"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/sport_edit"
@@ -50,16 +70,6 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/date_edit"
-        android:layout_width="301dp"
-        android:layout_height="46dp"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:hint="@string/date_text"
-        android:inputType="datetime" />
-
-    <EditText
         android:id="@+id/game_size_edit"
         android:layout_width="301dp"
         android:layout_height="46dp"
@@ -69,7 +79,7 @@
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/create_group_btn"
         android:layout_width="163dp"
         android:layout_height="68dp"
         android:layout_gravity="center"

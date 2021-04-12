@@ -64,5 +64,7 @@
     <string name="save_btn_title">Save</string>
     <string name="groups">Groups</string>
     <string name="your_groups">Your Groups</string>
+    <string name="group_title">Group Title</string>
+    <string name="description">Description</string>
 
 </resources>
